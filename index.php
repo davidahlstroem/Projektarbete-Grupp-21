@@ -2,11 +2,11 @@
 <html>
     <head>
             <meta charset="utf-8">
-            
+            <link rel="stylesheet" href="css/main.css">
+                 
     </head>
 
     <body>
-        <link rel="stylesheet" href="css/main.css">
             <ul>
                     <li><a class="active" href="#start">Startsida</a></li>
                     <li><a href="#produkt">Produktsida</a></li>
