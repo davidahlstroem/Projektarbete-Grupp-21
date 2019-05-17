@@ -1,8 +1,31 @@
 body{
     text-align: center; color: rgb(255, 140, 0);
     background-color: rgb(255, 255, 255);
-    font-family: "Arial", "Helvetica", "Times New Roman", Times, serif;
-    font-style: bold;
+    font-family: "Courier", "Helvetica", "Times New Roman", Times, serif;
+    font-style: normal;
+    margin: 10px; 
+  }
+
+  .header {
+    background-color: #333;
+    padding: 50px;
+    text-align: center;
+    color: rgb(255, 140, 0); 
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(70, 70, 70);
+    color: white;
+    text-align: center;
+ }
+
+  #inlogg
+  {
+      text-align: left;  
   }
 
 ul {
@@ -10,7 +33,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(43, 43, 43);
   }
   
   li {
