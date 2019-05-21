@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" href="assets/css/main.css">
     <meta charset="utf-8">
     <title>loginPage</title>
   </head>
     <body>
-        <header>
-            <nav>
-                <h1>Välkommen hit</h1>
-                <ul>
-                    <li><a class="active" href="#start">Startsida</a></li>
-                    <li><a href="#produkt">Produktsida</a></li>
-                    <li><a href="#kontakt">Kontakta oss</a></li>
-                    <li><a href="#order">Ordersida</a></li>
-                </ul>
-            </nav>
-        </header>
+      <?php include "assets/html/header.php" ?>
 
-        <form class="loginForm" action="" method="post">
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Enter email...">
-            <label>Password:</label>
-            <input type="password" name="pwd" placeholder="Enter password...">
-            <button type="submit" name="btnLogin">Login</button>
-        </form>
+      <form class="loginForm" action="" method="post">
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="Enter email...">
+          <label>Password:</label>
+          <input type="password" name="pwd" placeholder="Enter password...">
+          <button type="submit" name="btnLogin">Login</button>
+      </form>
+
+      <?php include "assets/html/footer.php" ?>
     </body>
 </html>
