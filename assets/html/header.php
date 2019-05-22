@@ -4,7 +4,6 @@
     <h1>Header</h1>
   </div>
   <nav>
-    <h1>Välkommen hit</h1>
     <ul>
         <li><a class="active" href="index.php">Startsida</a></li>
         <li><a href="products.php">Produktsida</a></li>
