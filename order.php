@@ -8,14 +8,6 @@
     <body>
       <?php include "assets/html/header.php" ?>
 
-        <ul>
-        <li><a href="index.php">Startsida</a></li>
-        <li><a href="products.php">Produktsida</a></li>
-        <li><a href="register.php">Registrera dig</a></li>
-        <li><a class="active" href="order.php">Ordersida</a></li>
-        <li style="float:right"><a id="login" href="login.php">Logga in</a></li>
-        </ul>
-
         <h2>test order</h2>
 
       <?php include "assets/html/footer.php" ?>
