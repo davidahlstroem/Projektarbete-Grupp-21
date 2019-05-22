@@ -9,6 +9,7 @@
         <li><a href="products.php">Produktsida</a></li>
         <li><a href="register.php">Registrera dig</a></li>
         <li><a href="order.php">Ordersida</a></li>
+        <li><a href="comments.php">Kommentarer</a></li>
         <li style="float:right"><a id="login" href="login.php">Logga in</a></li>
     </ul>
   </nav>
