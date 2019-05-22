@@ -6,11 +6,11 @@
   <nav>
     <h1>Välkommen hit</h1>
     <ul>
-      <li><a class="active" href="index.php">Startsida</a></li>
-      <li><a href="#produkt">Produktsida</a></li>
-      <li><a href="#kontakt">Kontakta oss</a></li>
-      <li><a href="#order">Ordersida</a></li>
-      <li style="float:right"><a id="login" href="loginPage.php">Logga in</a></li>
+        <li><a class="active" href="index.php">Startsida</a></li>
+        <li><a href="products.php">Produktsida</a></li>
+        <li><a href="register.php">Registrera dig</a></li>
+        <li><a href="order.php">Ordersida</a></li>
+        <li style="float:right"><a id="login" href="login.php">Logga in</a></li>
     </ul>
   </nav>
 </header>
