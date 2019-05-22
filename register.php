@@ -8,14 +8,6 @@
     <body>
       <?php include "assets/html/header.php" ?>
 
-        <ul>
-        <li><a href="index.php">Startsida</a></li>
-        <li><a href="products.php">Produktsida</a></li>
-        <li><a class="active" href="register.php">Registrera dig</a></li>
-        <li><a href="order.php">Ordersida</a></li>
-        <li style="float:right"><a id="login" href="login.php">Logga in</a></li>
-        </ul>
-
         <form class="regForm" action="" method="post">
         <label>First name:</label>
         <input type="firstName" name="firstName" placeholder="Enter first name...">
