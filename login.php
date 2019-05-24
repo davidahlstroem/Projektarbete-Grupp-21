@@ -8,11 +8,15 @@
     <body>
       <?php include "assets/html/header.php" ?>
 
-        <form class="loginForm" action="assets/php/processLogin.php" method="POST">
+        <form class="loginForm" action="" method="post">
+          <div>
           <label>Email:</label>
           <input type="email" name="email" placeholder="Enter email...">
+          </div>
+          <div>
           <label>Password:</label>
           <input type="password" name="pwd" placeholder="Enter password...">
+          </div>
           <button type="submit" name="btnLogin">Login</button>
         </form>
 
