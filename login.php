@@ -8,7 +8,7 @@
     <body>
       <?php include "assets/html/header.php" ?>
 
-        <form class="loginForm" action="" method="post">
+        <form class="loginForm" action="assets/php/processLogin.php" method="POST">
           <label>Email:</label>
           <input type="email" name="email" placeholder="Enter email...">
           <label>Password:</label>
