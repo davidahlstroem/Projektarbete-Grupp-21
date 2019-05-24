@@ -49,12 +49,10 @@
                     VALUES ('$email', '$password', '$firstName', '$lastName', '$salt')";
 
       if($conn->query($sqlInsert) === TRUE){
-        echo "Registered account!";
-        //header("Location: loginPage.php");
+        header("Location: ../../login.php");
       } else {
         echo "SQL query went wrong: " . $sqlInsert . "<br>" . $conn->error;
       }
-
     }
   }
 ?>
