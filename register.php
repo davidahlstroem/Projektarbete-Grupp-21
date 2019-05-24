@@ -8,7 +8,7 @@
     <body>
       <?php include "assets/html/header.php" ?>
 
-        <form class="regForm" action="" method="post">
+        <form class="regForm" action="assets/php/processRegistration.php" method="POST">
         <label>First name:</label>
         <input type="text" name="firstName" placeholder="Enter first name...">
         <br>
