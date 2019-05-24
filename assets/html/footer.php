@@ -1,3 +1,3 @@
 <div class="footer">
-  <p>Footer - kontakt osv</p>
+  <h5>Kotakta oss:<br>018-12 34 56</h5>
 </div>
