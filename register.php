@@ -6,9 +6,9 @@
         <title></title>
     </head>
     <body>
-      <?php include "assets/html/header.php" ?>
+      <?php include "include/html/header.php" ?>
 
-        <form class="regForm" action="" method="post">
+        <form class="regForm" action="include/php/processRegistration.php" method="post">
         <div>
         <label>First name:</label>
         <input type="text" name="firstName" placeholder="Enter first name...">
@@ -32,6 +32,6 @@
         <button type="submit" name="btnReg">Register</button>
         </form>
 
-      <?php include "assets/html/footer.php" ?>
+      <?php include "include/html/footer.php" ?>
     </body>
 </html>
