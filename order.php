@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="assets/css/test.css">
+    <link rel="stylesheet" href="assets/css/order.css">
     <meta charset="utf-8">
     <title>productPage</title>
   </head>
