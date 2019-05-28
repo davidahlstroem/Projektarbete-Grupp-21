@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="assets/css/main.css">
@@ -6,22 +7,39 @@
     <title>loginPage</title>
   </head>
     <body>
-      <?php include "include/html/header.php" ?>
+    <div class="comments">
+        <?php
+        include "Include/html/header.php";
+        require "Include/php/connection.php";
+        $query ="SELECT commentText, nickname FROM Comment";
+        $result = $conn->query($query);
 
-        <form class="commentForm" action="" method="post">
-            <div class="email">
-                <label>Email:</label>
-                <input type="email" name="email" placeholder="Enter email...">
-            </div>    
-            <div class="comment">
-                <label>Kommentar:</label>
-                <input type="password" name="pwd" placeholder="Enter password...">
-            </div>    
-            <div class="button">
-                <button type="submit" name="btnLogin">Login</button>
-            </div>
-        </form>
+        if (isset($_SESSION['email'])==true)
+        {
+            include "Include/html/commentForm.php";
+        }
+        
+        
+        
+        if(($result->num_rows)==0)
+        {
+            echo("<br>No comments exists yet");
+        }
+        else
+        {
+            while ($row = $result->fetch_assoc())
+	        {
+                echo "<div class='entry'>";
+		        echo "User: " . $row["nickname"] . "<br> " . "Comment: " . $row["commentText"] . "<br>";
+                echo "<br>";
+                echo "</div>";
+                echo "<br>";
+                echo "<br>";
+	        }
+        }
 
-      <?php include "include/html/footer.php" ?>
+        ?>
+    </div>
+    <?php include "include/html/footer.php" ?>
     </body>
 </html>
