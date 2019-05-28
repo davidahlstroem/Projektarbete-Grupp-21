@@ -37,4 +37,11 @@
       }
     }
   }
+  function displayLogin(){
+    if (isset($_SESSION['email'])){
+      echo("<a id='logout' href='include/php/processLogout.php'>Logout</a>");
+    } else {
+      echo("<a id='login' href='login.php'>Login</a>");
+    }
+  }
 ?>
