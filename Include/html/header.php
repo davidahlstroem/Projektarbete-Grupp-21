@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+require "include/php/functions.php";
+?>
 <header>
   <div class="header">
     <h1>Header</h1>
@@ -10,7 +13,7 @@
         <li><a href="register.php">Registrera dig</a></li>
         <li><a href="order.php">Ordersida</a></li>
         <li><a href="comments.php">Kommentarer</a></li>
-        <li style="float:right"><a id="login" href="login.php">Logga in</a></li>
+        <li style='float:right'><?php displayLogin(); ?></li>
     </ul>
   </nav>
 </header>
