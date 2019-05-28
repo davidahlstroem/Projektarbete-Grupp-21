@@ -6,9 +6,9 @@
     <title>loginPage</title>
   </head>
     <body>
-      <?php include "assets/html/header.php" ?>
+      <?php include "include/html/header.php" ?>
 
-        <form class="loginForm" action="" method="post">
+        <form class="loginForm" action="include/php/processLogin.php" method="post">
           <div>
           <label>Email:</label>
           <input type="email" name="email" placeholder="Enter email...">
@@ -20,6 +20,6 @@
           <button type="submit" name="btnLogin">Login</button>
         </form>
 
-      <?php include "assets/html/footer.php" ?>
+      <?php include "include/html/footer.php" ?>
     </body>
 </html>
