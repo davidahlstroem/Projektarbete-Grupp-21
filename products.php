@@ -25,7 +25,7 @@
               <p>Pris!</p>
             </div>
             <div class="product-order">
-              <a href="#orderPage">Order!</a>
+              <a href="order.php">Order!</a>
             </div>
           </div>
         </div>
