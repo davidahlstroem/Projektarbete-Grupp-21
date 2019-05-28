@@ -6,7 +6,7 @@
     <title>productPage</title>
   </head>
     <body>
-      <?php include "assets/html/header.php" ?>
+      <?php include "include/html/header.php" ?>
 
         <h2>test order</h2>
 
@@ -114,6 +114,6 @@
         <div>
 
         <br>
-      <?php include "assets/html/footer.php" ?>
+      <?php include "include/html/footer.php" ?>
     </body>
 </html>
