@@ -7,7 +7,7 @@
         <title></title>
     </head>
     <body>
-      <?php include "assets/html/header.php" ?>
+      <?php include "include/html/header.php" ?>
 
         <div class="product-overview">
           <div>
@@ -30,6 +30,6 @@
           </div>
         </div>
 
-      <?php include "assets/html/footer.php" ?>
+      <?php include "include/html/footer.php" ?>
     </body>
 </html>
