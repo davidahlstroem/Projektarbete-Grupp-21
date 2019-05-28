@@ -6,7 +6,7 @@
     <title>loginPage</title>
   </head>
     <body>
-      <?php include "assets/html/header.php" ?>
+      <?php include "include/html/header.php" ?>
 
         <form class="commentForm" action="" method="post">
             <div class="email">
@@ -22,6 +22,6 @@
             </div>
         </form>
 
-      <?php include "assets/html/footer.php" ?>
+      <?php include "include/html/footer.php" ?>
     </body>
 </html>
