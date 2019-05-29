@@ -1,11 +1,18 @@
 body{
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
     text-align: center; color: rgb(255, 140, 0);
     background-color: rgb(255, 255, 255);
     font-family: "Courier", "Helvetica", "Times New Roman", Times, serif;
     font-style: normal;
     margin: 10px;
   }
-
+  html {
+    height: 100%;
+    box-sizing: border-box;
+  }
   .header {
     background-image: url("../img/header.jpg");
     background-position: center;
@@ -17,8 +24,9 @@ body{
   }
 
   .footer {
-    position: fixed;
+    position: absolute;
     left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
     background-color: rgb(43, 43, 43);
