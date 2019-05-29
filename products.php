@@ -17,14 +17,14 @@
         <title></title>
     </head>
     <body>
-      <?php include "include/html/header.php" ?>
+      <?php
+        include "include/html/header.php";
+        $_SESSION['artNo'] = $_GET['artNo'];
+      ?>
 
       <div class="container">
         <div class="product-overview">
-          <div class="img">
-            <img src="assets/img/body/st_black_body.jpg" alt="product-picture">
-          </div>
-          <?php displayProductInfo(101321); ?>
+          <?php displayProductInfo($_SESSION['artNo']); ?>
 
             <form class="product-order" action="index.php" method="get">
               <button id="orderBtn" type="submit" name="orderBtn">Order</button>
