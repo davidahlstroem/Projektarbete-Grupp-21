@@ -14,7 +14,7 @@
     }
     // Tar fram kommenter på sidan + edit/del funktioner
     function getComments($conn) {
-      $sql = "SELECT * FROM comments";
+      $sql = "SELECT * FROM comments ORDER BY date DESC";
       $result = $conn->query($sql);
       while ($row = $result-> fetch_assoc()) {
         $id = $row['uid'];
