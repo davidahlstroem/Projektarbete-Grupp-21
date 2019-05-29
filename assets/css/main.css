@@ -3,7 +3,7 @@ body{
     background-color: rgb(255, 255, 255);
     font-family: "Courier", "Helvetica", "Times New Roman", Times, serif;
     font-style: normal;
-    margin: 10px; 
+    margin: 10px;
   }
 
   .header {
@@ -13,7 +13,7 @@ body{
     background-color: #000;
     padding: 60px;
     text-align: left;
-    color: rgb(255, 140, 0); 
+    color: rgb(255, 140, 0);
   }
 
   .footer {
@@ -48,7 +48,7 @@ body{
 
   #inlogg
   {
-      text-align: left;  
+      text-align: left;
   }
 
 ul {
@@ -58,7 +58,7 @@ ul {
     overflow: hidden;
     background-color: #000;
   }
-  
+
   li {
     float: left;
   }
@@ -75,3 +75,92 @@ ul {
     background-color: #111;
   }
 
+/* Kommentar rutor etc */
+  textarea {
+    width: 850px;
+    height: 80px;
+    border: 5px #999 solid;
+    background-color: #FDFCFC;
+    resize: none;
+  }
+  .commentclass {
+    font-family: fantasy;
+    font-size: 20px;
+    color: #B70303;
+    font-weight: 100;
+    overflow-wrap: break-word;
+    text-shadow: 2px 2px #999;
+  }
+  .commentclass2 {
+    font-family: monospace;
+    font-size: 12px;
+    color: #056F1A;
+    font-weight: 100;
+    overflow-wrap: break-word;
+  }
+  .commentbox {
+    width: 1000px;
+    border-radius: 4px;
+    text-align: left;
+    position: relative;
+    height: auto;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: #DADADA;
+    border-radius: 3px;
+    border: 5px #999 solid;
+  }
+  .commentbox p{
+    font-family: cursive;
+    font-size: 14px;
+    line-height: 16px;
+    color: #282828;
+    font-weight: 100;
+    padding: 20px;
+    overflow-wrap: break-word;
+  }
+  .commentBtn {
+    font-family: cursive;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    margin-bottom: 60px;
+    margin-right: auto;
+  }
+  .commentmsg {
+    float: right;
+    position: absolute;
+    top:10px;
+    right: 10px;
+  }
+  .edit-form {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .edit-form button {
+    width: 50px;
+    height: 25px;
+    color: #282828;
+    background-color: #fff;
+    opacity: 0.4;
+  }
+  .edit-form button:hover {
+    opacity: 1;
+  }
+  .delete-form {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+  }
+  .delete-form button {
+    width: 60px;
+    height: 25px;
+    color: #282828;
+    background-color: #fff;
+    opacity: 0.4;
+  }
+  .delete-form button:hover {
+    opacity: 1;
+  }
+/* Kommentar rutor etc END */
