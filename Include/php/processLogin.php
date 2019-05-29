@@ -55,7 +55,16 @@
 	        {
             $_SESSION['userID']=$row['userID'];
 	        }
+		
+          //query för att hämta admin ID/mejl
+          $query2 = "SELECT usertype FROM User WHERE (email='$email')";
+          $adminID = $conn->query($query2) or die($conn->error);
+          $adminID = dBQuery($query2);
 
+          if ($row = $adminID->fetch_assoc())
+	        {
+            $_SESSION['usertype']=$row['usertype'];
+	        }
 
           header("Location: ../../index.php?login=success");
         }
