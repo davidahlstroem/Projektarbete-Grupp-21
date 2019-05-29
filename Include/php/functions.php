@@ -17,7 +17,7 @@
                   <p>".$row['description']."</p>
                 </div>
                 <div class='product-price'>
-                  <p>".$row['price']."</p>
+                  <p>".$row['price']." kr</p>
                 </div>
               </div>");
 
