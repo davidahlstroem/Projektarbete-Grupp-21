@@ -1,0 +1,45 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+img {
+  height:350px;
+}
+.img {
+  margin: 10px;
+  display: inline-block;
+}
+
+.product-overview {
+  margin: 100px auto;
+  border: 2px solid black;
+}
+.product-info {
+  float:right;
+  margin: 20px;
+  width: 70%;
+  border: 1px solid #ccc;
+}
+.product-title {
+  border: 1px solid orange;
+}
+.product-description {
+  text-align: left;
+  color: #000;
+}
+.product-price {
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+}
+.product-order {
+  width: 40%;
+  border: 1px solid #ccc;
+}
+.test {
+
+}
+#orderBtn {
+
+}
