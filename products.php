@@ -10,15 +10,21 @@
     <body>
       <?php include "include/html/header.php" ?>
 
+      <div class="container">
         <div class="product-overview">
-          <div>
+          <div class="img">
             <img src="assets/img/body/st_black_body.jpg" alt="product-picture">
           </div>
           <?php displayProductInfo(101321); ?>
-          <div class="product-order">
-            <a href="#orderPage">Order!</a>
-          </div>
+
+            <form class="product-order" action="index.php" method="get">
+              <button id="orderBtn" type="submit" name="orderBtn">Order</button>
+            </form>
+          
+
+
         </div>
+      </div>
 
       <?php include "include/html/footer.php" ?>
     </body>
