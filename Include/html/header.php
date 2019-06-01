@@ -4,7 +4,7 @@ require "include/php/functions.php";
 ?>
 <header>
   <div class="header">
-    <h1>Header</h1>
+    <h1></h1>
   </div>
   <nav>
     <ul>
