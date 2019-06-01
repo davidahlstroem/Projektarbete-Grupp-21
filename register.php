@@ -31,9 +31,6 @@
           </div>
           <button type="submit" name="btnReg">Register</button>
         </form>
-        <p>
-		Already a member? <a href="login.php">Sign in</a>
-	    </p>
 
       <?php include "include/html/footer.php" ?>
     </body>

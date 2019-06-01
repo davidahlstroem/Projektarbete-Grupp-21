@@ -1,4 +1,3 @@
-
 <?php
   date_default_timezone_set('Europe/Stockholm');
   include "Include/php/connection.php";
@@ -17,20 +16,21 @@
         <title></title>
     </head>
     <body>
-      <?php
-        include "include/html/header.php";
-        $_SESSION['artNo'] = $_GET['artNo'];
-      ?>
+      <?php include "include/html/header.php" ?>
 
       <div class="container">
         <div class="product-overview">
-          <?php displayProductInfo($_SESSION['artNo']); ?>
+          <div class="img">
+            <img src="assets/img/body/st_black_body.jpg" alt="product-picture">
+          </div>
+          <?php displayProductInfo(101321); ?>
 
             <form class="product-order" action="index.php" method="get">
               <button id="orderBtn" type="submit" name="orderBtn">Order</button>
             </form>
         </div>
       </div>
+
 
       <?php
 
@@ -45,7 +45,9 @@
         echo "Log in to make a comment! <br><br>";
       }
       getComments($conn);
+      include "include/html/footer.php"
       ?>
+
 
     </body>
 </html>
