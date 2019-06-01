@@ -55,7 +55,7 @@
 	        {
             $_SESSION['userID']=$row['userID'];
 	        }
-		
+
           //query för att hämta admin ID/mejl
           $query2 = "SELECT usertype FROM User WHERE (email='$email')";
           $adminID = $conn->query($query2) or die($conn->error);
@@ -65,6 +65,7 @@
 	        {
             $_SESSION['usertype']=$row['usertype'];
 	        }
+
 
           header("Location: ../../index.php?login=success");
         }

@@ -26,7 +26,6 @@
           echo "<span class='commentclass2'>".$row ['date']."<br><br>"."</span>";
           echo nl2br($row ['message']);
           echo "</p>";
-          
           if (isset($_SESSION['email'])) {
             // En user med usertype = 'Admin' får tillgång till Del/Edit i alla kommentarer
             if($_SESSION['usertype']=='Admin') {
@@ -42,7 +41,6 @@
               <button> Edit </button>
               </form>";
             }
-            
             // En user får tillgång till Del/Edit i sina egna kommentarer
             else if (($_SESSION['email'] == $row2 ['email'])) {
               echo "<form class='delete-form' method= 'POST' action='".deleteComments($conn)."'>
