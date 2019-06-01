@@ -12,7 +12,7 @@ require "include/php/functions.php";
         <li><a href="products.php">Produktsida</a></li>
         <li><a href="register.php">Registrera dig</a></li>
         <li><a href="order.php">Ordersida</a></li>
-        <li><a href="comments.php">Kommentarer</a></li>
+        <li><a href="search.php">Search results</a></li>
         <li style='float:right'><?php displayLogin(); ?></li>
     </ul>
   </nav>
