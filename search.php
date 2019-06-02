@@ -14,10 +14,32 @@
   <body>
     <?php include "include/html/header.php" ?>
 
-    <form action="search.php" method="POST" onsubmit="document.location.href='search.php';">
-      <input type="text" name="search" />
-      <input type="submit" value="Search" />
-    </form>
+//search function
+    <?php
+      if(isset($_POST['submit-search'])) {
+        $search = mysqli_real_escape_string($conn, $_POST['search']);
+        $sql = "SELECT * FROM Product WHERE name LIKE '%$searchquery%' OR description LIKE '%$searchquery%'"
+        $result = mysqli_query($conn, $sql);
+        $queryResult = mysqli_num_rows($result);
+        if ($queryResult) < 0 {
+          while ($row = mysqli_fetch_assoc) {
+            echo "<a href = 'products.php?title=".$row['ArtNo']."'><div class='p-float'>
+              <div class='p-float-in'>
+                <img class='p-img' src='assets/img/product/".$row['artNo'].".jpeg'/>
+                <div class='p-name'>".$row['name']."</div>
+                <div class='p-price'>".$row['price']." kr</div>
+                <form class='' action='products.php?artNo=".$row['artNo']."' method='post'>
+                  <button class='p-add' type='submit' name=''>Link</button>
+                </form>
+                <button class='p-add'>More information</button>
+            </div>
+          </div>";
+          }
+        } else {
+          echo "No results matching your search!"
+        }
+      }
+     ?>
 
 
     <div id="p-float">
@@ -32,29 +54,30 @@
 
 
   <?php
-  $output = '';
-  $min_length = 3;
-
-  if(isset($_POST['search'])) {
-    $searchquery = $_POST['search'];
-    $query = $conn->query("SELECT * FROM Product WHERE name LIKE '%$searchquery%' OR description LIKE '%$searchquery%' LIMIT 10") or die ("could not search!");
-    $count = mysqli_num_rows($query);
-    if ($count == 0) {
-      $output = '<div> No search results! </div>';
-      echo $output;
-    } else {
-      while ($row = mysqli_fetch_array($query)) {
-        $name = $row['name'];
-        $artNo = $row['artNo'];
-        $price = $row['price'];
-        $description = $row['description'];
-
-        $output .= '<div> '.$name.' '.$artNo.' '.$price.' '.$description.' </div>';
-        echo $output;
-
-      }
-    }
-  }
+  // $output = '';
+  // $min_length = 3;
+  //
+  // if(isset($_POST['search'])) {
+  //   $searchquery = $_POST['search'];
+  //   $query = $conn->query("SELECT * FROM Product WHERE name LIKE '%$searchquery%' OR description LIKE '%$searchquery%' LIMIT 10") or die ("could not search!");
+  //   $count = mysqli_num_rows($query);
+  //   if ($count == 0) {
+  //     $output = '<div> No search results! </div>';
+  //     echo $output;
+  //   } else {
+  //     while ($row = mysqli_fetch_array($query)) {
+  //       $name = $row['name'];
+  //       $artNo = $row['artNo'];
+  //       $price = $row['price'];
+  //       $description = $row['description'];
+  //
+  //       $output .= '<div> '.$name.' '.$artNo.' '.$price.' '.$description.' </div>';
+  //       echo $output;
+  //
+  //     }
+  //   }
+  // }
+  
 
 
     // $query = $_POST['query'];
