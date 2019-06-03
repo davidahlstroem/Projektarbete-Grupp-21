@@ -21,16 +21,11 @@
     </form>
 
 
-
-
-
-
     <div id="p-float">
-      <?php displayProducts(); ?>
+      <?php
+        $sql = "SELECT * FROM Product";
+        displayProducts($sql); ?>
     </div>
-    <form class="" action="products.php" method="get">
-      <button type="submit" name="button" value="hej">Link</button>
-    </form>
 
 
 
