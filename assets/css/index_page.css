@@ -21,6 +21,7 @@
   div.p-float {
     float: left;
     width: 25%;
+
   }
   div.p-float-in {
     box-sizing: border-box;
@@ -28,6 +29,8 @@
     padding: 10px;
     border: 1px solid #f2dcdc;
     background: #fff7f7;
+    height: 40%;
+
   }
   img.p-img {
     width: 100%;
