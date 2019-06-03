@@ -8,10 +8,10 @@ require "include/php/functions.php";
   </div>
   <nav>
     <ul>
-        <li><a class="active" href="index.php">Startsida</a></li>
-        <li><a href="products.php">Produktsida</a></li>
-        <li><a href="register.php">Registrera dig</a></li>
-        <li><a href="order.php">Ordersida</a></li>
+        <li><a class="active" href="index.php">Home</a></li>
+        <li><a href="products.php">Products</a></li>
+        <li><a href="register.php">Register</a></li>
+        <li><a href="order.php">Order</a></li>
 
         <li style='float:right'><?php displayLogin(); ?></li>
     </ul>
