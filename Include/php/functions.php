@@ -43,7 +43,7 @@
                   <p>".$row['description']."</p>
                 </div>
                 <div class='product-price'>
-                  <p>".$row['price']." kr</p>
+                  <p>".$row['price']." € EUR</p>
                 </div>
               </div>");
       }
@@ -84,6 +84,12 @@
     }
   }
 
+  function displayShoppingCart(){
+    if (isset($_SESSION['email'])){
+      echo("<a href='cart.php'>Shopping Cart</a");
+    }
+  }
+
   function displayCartItems() {
     if(isset( $_SESSION['shoppingCart'])){
       foreach ($_SESSION['shoppingCart'] as $key => $value) {
@@ -105,10 +111,65 @@
             <div class='cart-quantity'>
               <input class='quantity-input' type='number' name='quantity' value='1'>
             </div>
-            <button class='cartRemoveBtn' type='button' name='cartRemoveBtn'>Remove</button>
+            <form class='cartRemoveForm' action='include/php/cartRemoveItem.php?artNo=".$value."' method='post'>
+              <button class='cartRemoveBtn' type='submit' name='cartRemoveBtn'>Remove</button>
+            </form>
           </div>");
       }
-    } else { echo("no items"); } //lär inte behövas senare
+    } else { echo("no items"); }
+  }
+
+  function displayTotalPrice(){
+    if(isset( $_SESSION['shoppingCart'])){
+      $totalPrice = 0;
+      foreach ($_SESSION['shoppingCart'] as $key => $value) {
+        $sql = "SELECT price FROM Product WHERE artNo=$value";
+        while ($row = dBQuery($sql)->fetch_assoc()) {
+          $totalPrice += $row['price'];
+        }
+        echo ("<div class='cart-total'>
+                <h3>total price</h3>
+                <p id='totalPrice'>".$totalPrice."</p>
+              </div>");
+      }
+    }
+  }
+
+  function displayOrderInfo(){
+    /*
+    if(isset($_SESSION['email'])){
+      $sqlUser = "SELECT * FROM User WHERE email=$_SESSION['email']";
+      if($rowUser = dBQuery($sqlUser)->fetch_assoc()){
+        $firstName = $rowUser['firstName'];
+        $lastName = $rowUser['$lastName'];
+      }
+    }*/
+
+    echo ("<div class='order-info'>
+            <p>Thank you ".$firstName." ".$lastName."  for your purchase!</p>
+            <p>Order info:</p>
+            <div class='order-products'>");
+
+    if(isset( $_SESSION['shoppingCart'])){
+      $totalPrice = 0;
+      foreach ($_SESSION['shoppingCart'] as $key => $value) {
+        $sql = "SELECT * FROM Product WHERE artNo='$value'";
+        while ($row = dBQuery($sql)->fetch_assoc()) {
+          $totalPrice += $row['price'];
+          echo("div class='order-row'>
+                  <div class='order-name'>
+                    <p>".$row['name']."</p>
+                  </div>
+                  <div class='order-price'>
+                    <p>".$row['price']."</p>
+                  </div>
+                </div>");
+        }
+      }
+      echo("</div>
+          <div class='totalPrice'>".$totalPrice."</div>
+          </div>");
+    }
   }
 
 ?>
