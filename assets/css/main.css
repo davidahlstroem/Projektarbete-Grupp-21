@@ -35,15 +35,23 @@ body{
  }
 
   form {
-  margin: 20px auto;
+  margin: 8px auto;
   border-radius: 4px;
+  padding: 10px 10px;
+  height: 10px; 
+  
   }
 
   form div {
   margin: 25px auto;
   border-radius: 4px;
+  height: 10px;
 
   }
+
+  .regForm {
+    background-color: white;
+  } 
 
   label {
   width: 165px;
@@ -75,13 +83,33 @@ ul {
     display: block;
     color: rgb(255, 140, 0);
     text-align: center;
-    padding: 14px 16px;
+    padding: 23px 16px;
     text-decoration: none;
   }
 
   li a:hover {
     background-color: #111;
   }
+
+  .search {
+  font-size: 12px;
+  color: black;
+  width: 150px;
+  padding: 10px 1px;
+  height: 2px; 
+  }
+
+  .searchBtn {
+  font-size: 13px;
+  color: black;
+  width: 11px;
+  padding: 11px 10px;
+  height: 3px;
+  border-radius: 4px;
+  background-color: green;
+  float: right;
+  }
+
 
 /* Kommentar rutor etc */
   textarea {
