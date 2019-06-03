@@ -66,7 +66,7 @@
     $rowPickup = dBQuery($sqlPickup)->fetch_assoc();
     $rowBridge = dBQuery($sqlBridge)->fetch_assoc();
 
-    echo("<div class='product-spec'>
+    echo("<div id='product-spec'>
             <ul>
               <li>".$rowBody['name']."</li>
               <li>".$rowNeck['name']."</li>
