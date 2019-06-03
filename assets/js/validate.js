@@ -71,3 +71,7 @@ function validRegistration(){
 function validComment(){
 	return isEmpty("cmt", 0);
 }
+
+function validSearch(){
+	return !isEmpty("search", 0);
+}
