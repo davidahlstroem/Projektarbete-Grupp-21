@@ -8,13 +8,15 @@
         $date = $_POST['date'];
         $message = $_POST['message'];
         $messagesql = $conn->real_escape_string($message);
-        $sql = "INSERT INTO comments (uid, date, message) VALUES ('$uid', '$date', '$messagesql')";
+        $instrument = $_SESSION['artNo'];
+        $sql = "INSERT INTO comments (uid, date, message, productID) VALUES ('$uid', '$date', '$messagesql', '$instrument')";
         $result = $conn->query($sql);
       }
     }
     // Tar fram kommenter på sidan + edit/del funktioner
     function getComments($conn) {
-      $sql = "SELECT * FROM comments ORDER BY date DESC";
+      $instrument = $_SESSION['artNo'];
+      $sql = "SELECT * FROM comments WHERE productID=$instrument ORDER BY date DESC";
       $result = $conn->query($sql);
       while ($row = $result-> fetch_assoc()) {
         $id = $row['uid'];
@@ -38,7 +40,6 @@
               <input type='hidden' name='uid' value='".$row ['uid']."'>
               <input type='hidden' name='date' value='".$row ['date']."'>
               <input type='hidden' name='message' value='".$row ['message']."'>
-              <button> Edit </button>
               </form>";
             }
             // En user får tillgång till Del/Edit i sina egna kommentarer
