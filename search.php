@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/index_page.css">
     <meta charset="utf-8">
-    <title>StartPage</title>
+    <title>SearchPage</title>
 
   </head>
   <body>
     <?php include "include/html/header.php" ?>
 
-//search function
+
     <?php
       if(isset($_POST['submit-search'])) {
-        $search = mysqli_real_escape_string($conn, $_POST['search']);
-        $sql = "SELECT * FROM Product WHERE name LIKE '%$searchquery%' OR description LIKE '%$searchquery%'"
+        $search = mysqli_real_escape_string ($conn, $_POST['search']);
+        $sql = "SELECT * FROM Product WHERE name LIKE '%$search%' OR description LIKE '%$search%'";
         $result = mysqli_query($conn, $sql);
         $queryResult = mysqli_num_rows($result);
-        if ($queryResult) < 0 {
-          while ($row = mysqli_fetch_assoc) {
-            echo "<a href = 'products.php?title=".$row['ArtNo']."'><div class='p-float'>
+        if ($queryResult > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo "<a href = 'products.php?title=".$row['artNo']."'><div class='p-float'>
               <div class='p-float-in'>
                 <img class='p-img' src='assets/img/product/".$row['artNo'].".jpeg'/>
                 <div class='p-name'>".$row['name']."</div>
@@ -36,18 +36,11 @@
           </div>";
           }
         } else {
-          echo "No results matching your search!"
+          echo "No results matching your search!";
         }
       }
      ?>
 
-
-    <div id="p-float">
-      <?php displayProducts(); ?>
-    </div>
-    <form class="" action="products.php" method="get">
-      <button type="submit" name="button" value="hej">Link</button>
-    </form>
 
     <?php include "include/html/footer.php" ?>
   </body>
@@ -77,7 +70,6 @@
   //     }
   //   }
   // }
-  
 
 
     // $query = $_POST['query'];
