@@ -27,11 +27,11 @@ button {
 }
 
 img {
-  height:350px;
+  height:200px;
 }
 .img {
-  margin: 10px;
-  display: inline-block;
+  margin-right: 1;
+  float: right;
 }
 
 .product-overview {
@@ -39,7 +39,6 @@ img {
   border: 4px solid orange;
 }
 .product-info {
-  float:right;
   margin: 20px;
   width: 70%;
   border: 1px solid black;
@@ -50,6 +49,7 @@ img {
 .product-description {
   text-align: left;
   color: #000;
+  float:right;
 }
 .product-price {
   text-align: left;
@@ -60,9 +60,25 @@ img {
   width: 0%;
   border: 1px solid #ccc;
 }
-.test {
 
-}
 #orderBtn {
-font-size: 20px;
+font-size: 15px;
+}
+
+  #product-spec ul {
+    list-style-type: circle; 
+    margin: 20px;
+    padding: 4px;
+    background-color: #fff;
+    border: 2px solid orange;
+}
+
+  #product-spec li {
+    float: none;
+}
+
+  #product-spec li a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
 }
