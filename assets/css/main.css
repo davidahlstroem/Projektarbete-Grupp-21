@@ -82,6 +82,7 @@ ul {
   li a:hover {
     background-color: #111;
   }
+
 /* Kommentar rutor etc */
   textarea {
     width: 800px;
@@ -113,9 +114,9 @@ ul {
     height: auto;
     margin: 20px auto;
     padding: 5px;
-    background-color: #DADADA;
+    background-color: #EDEDED;
     border-radius: 3px;
-    border: 5px #999 solid;
+    border: 3px orange solid;
   }
   .commentbox p{
     font-family: "Helvetica";
@@ -130,9 +131,9 @@ ul {
     font-family: "Helvetica";
     width: 150px;
     height: 30px;
-    cursor: pointer;
     margin-bottom: 50px;
     margin-right: auto;
+    font-size: 16px;
   }
   .commentmsg {
     float: right;
@@ -146,11 +147,13 @@ ul {
     right: 0px;
   }
   .edit-form button {
-    width: 70px;
-    height: 25px;
+    width: 60px;
+    height: 20px;
     color: #000;
     background-color: #fff;
     opacity: 100;
+    font-size: 12px;
+    margin-top: -17;
   }
   .edit-form button:hover {
     opacity: 1;
@@ -161,14 +164,17 @@ ul {
     right: 50px;
   }
   .delete-form button {
-    width: 110px;
-    height: 25px;
-    color: #282828;
+    width: 70px;
+    height: 20px;
+    color: #000;
     background-color: #fff;
     opacity: 100;
+    font-size: 12px;
+    margin-top: -17;
   }
   .delete-form button:hover {
     opacity: 1;
   }
 /* Kommentar rutor etc END */
+
 
