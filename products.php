@@ -26,10 +26,11 @@
             displayProductInfo($_SESSION['artNo']);
             displaySpecification($_SESSION['artNo']); //kolla alt styling
           ?>
-
           <form class="addToCart-form" action="include/php/processCart.php?artNo=<?php echo($_SESSION['artNo']); ?>" method="post">
             <button class="p-add" type="submit" name="addToCart">add To Cart</button>
           </form>
+          <br>
+          <br>
         </div>
       </div>
 
@@ -41,7 +42,13 @@
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
             <textarea autofocus id='username' name= 'message' ></textarea><br>
             <button class ='commentBtn' type 'submit' name='commentSubmit'> Comment </button>
-            </form>";
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>";
       } else {
         echo "Log in to make a comment! <br><br>";
       }
