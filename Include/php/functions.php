@@ -12,7 +12,7 @@
                 <div class='p-float-in'>
                   <img class='p-img' src='assets/img/product/".$row['artNo'].".jpeg'/>
                   <div class='p-name'>".$row['name']."</div>
-                  <div class='p-price'>".$row['price']." € EUR</div>
+                  <div class='p-price'>".$row['price']."€ EUR</div>
                   <form class='' action='products.php?artNo=".$row['artNo']."' method='post'>
                     <button class='p-add' type='submit' name=''>Overview</button>
                   </form>
