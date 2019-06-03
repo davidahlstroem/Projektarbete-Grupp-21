@@ -16,6 +16,7 @@ require "include/php/functions.php";
         <button class="searchBtn" type="submit" name="submit-search" value="Enter"></button>
         </form></li>
         <li style='float:right'><?php displayLogin(); ?></li>
+        <li style='float:right'><?php displayShoppingCart(); ?></li>
     </ul>
   </nav>
 </header>
