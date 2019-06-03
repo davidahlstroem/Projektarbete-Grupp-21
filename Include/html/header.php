@@ -14,6 +14,7 @@ require "include/php/functions.php";
         <li><a href="order.php">Order</a></li>
 
         <li style='float:right'><?php displayLogin(); ?></li>
+        <li style='float:right'><a href="cart.php">Shopping Cart</a></li>
     </ul>
   </nav>
 </header>
