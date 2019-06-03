@@ -9,7 +9,6 @@ require "include/php/functions.php";
   <nav>
     <ul>
         <li><a class="active" href="index.php">Home</a></li>
-        <li><a href="products.php">Products</a></li>
         <li style='float:right'><a href="register.php">Register</a></li>
         <li><a href="map.php">Find our store</a></li>
         <li><form action = "search.php" method="POST">
