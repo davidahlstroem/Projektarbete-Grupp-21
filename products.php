@@ -1,10 +1,9 @@
+
 <?php
   date_default_timezone_set('Europe/Stockholm');
   include "Include/php/connection.php";
   include "Include/php/functionsComments.php";
  ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -16,21 +15,23 @@
         <title></title>
     </head>
     <body>
-      <?php include "include/html/header.php" ?>
+      <?php
+        include "include/html/header.php";
+        $_SESSION['artNo'] = $_GET['artNo'];
+      ?>
 
       <div class="container">
         <div class="product-overview">
-          <div class="img">
-            <img src="assets/img/body/st_black_body.jpg" alt="product-picture">
-          </div>
-          <?php displayProductInfo(101321); ?>
+          <?php
+            displayProductInfo($_SESSION['artNo']);
+            displaySpecification($_SESSION['artNo']); //kolla alt styling
+          ?>
 
-            <form class="product-order" action="index.php" method="get">
-              <button id="orderBtn" type="submit" name="orderBtn">Order</button>
-            </form>
+          <form class="addToCart-form" action="include/php/processCart.php?artNo=<?php echo($_SESSION['artNo']); ?>" method="post">
+            <button class="p-add" type="submit" name="addToCart">add To Cart</button>
+          </form>
         </div>
       </div>
-
 
       <?php
 
@@ -45,9 +46,7 @@
         echo "Log in to make a comment! <br><br>";
       }
       getComments($conn);
-      include "include/html/footer.php"
       ?>
-
 
     </body>
 </html>
