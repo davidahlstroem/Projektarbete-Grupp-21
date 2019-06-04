@@ -67,6 +67,7 @@
     $rowBridge = dBQuery($sqlBridge)->fetch_assoc();
 
     echo("<div id='product-spec'>
+            <h3>Specifications</h3>
             <ul>
               <li>".$rowBody['name']."</li>
               <li>".$rowNeck['name']."</li>
@@ -86,12 +87,20 @@
 
   function displayShoppingCart(){
     if (isset($_SESSION['email'])){
-      echo("<a href='cart.php'>Shopping Cart</a>");
+      echo("<a href='cart.php'>Shopping Cart");
+      displayShoppingCartCount();
+      echo "</a>";
+    }
+  }
+  function displayShoppingCartCount() {
+    if(isset($_SESSION['email']) && isset($_SESSION['shoppingCart']) && count($_SESSION['shoppingCart']) > 0){
+      $count = count($_SESSION['shoppingCart']);
+      echo ("(".$count.")");
     }
   }
 
   function displayCartItems() {
-    if(count($_SESSION['shoppingCart']) > 0){
+    if(isset($_SESSION['shoppingCart']) && count($_SESSION['shoppingCart']) > 0){
       echo "<div class='cart-items'>
               <div class='cart-head'>
                 <h3>titles</h3>
@@ -121,11 +130,11 @@
 </div>
  */
       }
-    } else { echo("no items"); }
+    } else { echo("<h2>no items</h2>"); }
   }
 
   function displayTotalPrice(){
-    if(count($_SESSION['shoppingCart']) > 0){
+    if(isset($_SESSION['shoppingCart']) && count($_SESSION['shoppingCart']) > 0){
       $totalPrice = 0;
       foreach ($_SESSION['shoppingCart'] as $key => $value) {
         $sql = "SELECT price FROM Product WHERE artNo='$value'";
