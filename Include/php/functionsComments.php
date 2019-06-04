@@ -40,6 +40,7 @@
               <input type='hidden' name='uid' value='".$row ['uid']."'>
               <input type='hidden' name='date' value='".$row ['date']."'>
               <input type='hidden' name='message' value='".$row ['message']."'>
+              <button> Edit </button>
               </form>";
             }
             // En user får tillgång till Del/Edit i sina egna kommentarer
