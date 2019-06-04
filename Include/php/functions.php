@@ -116,7 +116,7 @@
                   <p>".$row['name']."</p>
                 </div>
                 <div class='cart-price'>
-                  <p>".$row['price']."</p>
+                  <p>".$row['price']."€ EUR</p>
                 </div>
                 <form class='cartRemoveForm' action='include/php/cartRemoveItem.php?artNo=".$value."' method='post'>
                   <button class='cartRemoveBtn' type='submit' name='cartRemoveBtn'>Remove</button>
@@ -143,7 +143,7 @@
       }
       echo ("<div class='cart-total'>
               <h3>total price</h3>
-              <p id='totalPrice'>".$totalPrice."</p>
+              <p id='totalPrice'>".$totalPrice."€ EUR</p>
             </div>");
       displayOrderButton($totalPrice);
     }
