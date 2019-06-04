@@ -23,15 +23,17 @@
         $queryResult = mysqli_num_rows($result);
         if ($queryResult > 0) {
           while ($row = mysqli_fetch_assoc($result)) {
-            echo "<a href = 'products.php?title=".$row['artNo']."'><div class='p-float'>
+            echo "<div class='p-float'>
               <div class='p-float-in'>
                 <img class='p-img' src='assets/img/product/".$row['artNo'].".jpeg'/>
                 <div class='p-name'>".$row['name']."</div>
                 <div class='p-price'>".$row['price']." kr</div>
-                <form class='' action='products.php?artNo=".$row['artNo']."' method='post'>
-                  <button class='p-add' type='submit' name=''>Link</button>
+                <form class='addToCart-form' action='products.php?artNo=".$row['artNo']."' method='post'>
+                  <button class='p-add' type='submit' name=''>Overview</button>
                 </form>
-                <button class='p-add'>More information</button>
+                <form class='addToCart-form' action='include/php/processCart.php?artNo=".$row['artNo']."' method='post'>
+                  <button class='p-add' name='addToCart'>Add To Cart</button>
+                </form>
             </div>
           </div>";
           }
