@@ -13,7 +13,7 @@
                   <img class='p-img' src='assets/img/product/".$row['artNo'].".jpeg'/>
                   <div class='p-name'>".$row['name']."</div>
                   <div class='p-price'>".$row['price']."€ EUR</div>
-                  <form class='' action='products.php?artNo=".$row['artNo']."' method='post'>
+                  <form class='addToCart-form' action='products.php?artNo=".$row['artNo']."' method='post'>
                     <button class='p-add' type='submit' name=''>Overview</button>
                   </form>
                   <form class='addToCart-form' action='include/php/processCart.php?artNo=".$row['artNo']."' method='post'>
@@ -86,90 +86,106 @@
 
   function displayShoppingCart(){
     if (isset($_SESSION['email'])){
-      echo("<a href='cart.php'>Shopping Cart</a");
+      echo("<a href='cart.php'>Shopping Cart</a>");
     }
   }
 
   function displayCartItems() {
-    if(isset( $_SESSION['shoppingCart'])){
+    if(count($_SESSION['shoppingCart']) > 0){
+      echo "<div class='cart-items'>
+              <div class='cart-head'>
+                <h3>titles</h3>
+              </div>";
+
       foreach ($_SESSION['shoppingCart'] as $key => $value) {
         // code...
         $sql = "SELECT * FROM Product WHERE artNo=$value";
         $row = dBQuery($sql)->fetch_assoc();
 
-        echo("<div class='cart-items'>
-          <div class='cart-head'>
-            <h3>titles</h3>
-          </div>
-          <div class='cart-row'>
-            <div class='cart-name'>
-              <p>".$row['name']."</p>
-            </div>
-            <div class='cart-price'>
-              <p>".$row['price']."</p>
-            </div>
-            <div class='cart-quantity'>
-              <input class='quantity-input' type='number' name='quantity' value='1'>
-            </div>
-            <form class='cartRemoveForm' action='include/php/cartRemoveItem.php?artNo=".$value."' method='post'>
-              <button class='cartRemoveBtn' type='submit' name='cartRemoveBtn'>Remove</button>
-            </form>
-          </div>");
+        echo("<div class='cart-row'>
+                <div class='cart-name'>
+                  <p>".$row['name']."</p>
+                </div>
+                <div class='cart-price'>
+                  <p>".$row['price']."</p>
+                </div>
+                <form class='cartRemoveForm' action='include/php/cartRemoveItem.php?artNo=".$value."' method='post'>
+                  <button class='cartRemoveBtn' type='submit' name='cartRemoveBtn'>Remove</button>
+                </form>
+              </div>
+            </div>");
+
+/* utifall att.
+<div class='cart-quantity'>
+  <input class='quantity-input' type='number' name='quantity' value='1'>
+</div>
+ */
       }
     } else { echo("no items"); }
   }
 
   function displayTotalPrice(){
-    if(isset( $_SESSION['shoppingCart'])){
+    if(count($_SESSION['shoppingCart']) > 0){
       $totalPrice = 0;
       foreach ($_SESSION['shoppingCart'] as $key => $value) {
-        $sql = "SELECT price FROM Product WHERE artNo=$value";
-        while ($row = dBQuery($sql)->fetch_assoc()) {
-          $totalPrice += $row['price'];
-        }
-        echo ("<div class='cart-total'>
-                <h3>total price</h3>
-                <p id='totalPrice'>".$totalPrice."</p>
-              </div>");
+        $sql = "SELECT price FROM Product WHERE artNo='$value'";
+        $row = dBQuery($sql)->fetch_assoc();
+        $totalPrice += $row['price'];
       }
+      echo ("<div class='cart-total'>
+              <h3>total price</h3>
+              <p id='totalPrice'>".$totalPrice."</p>
+            </div>");
+      displayOrderButton($totalPrice);
+    }
+  }
+
+  function displayOrderButton($totalPrice){
+    if(count($_SESSION['shoppingCart']) > 0){
+      echo "<form class='order-form' action='order.php?totalPrice=".$totalPrice."' method='POST'>
+             <button type='submit' name='orderBtn'>Order</button>
+            </form>";
     }
   }
 
   function displayOrderInfo(){
-    /*
-    if(isset($_SESSION['email'])){
-      $sqlUser = "SELECT * FROM User WHERE email=$_SESSION['email']";
-      if($rowUser = dBQuery($sqlUser)->fetch_assoc()){
+
+    if(isset($_SESSION['email']) && count($_SESSION['shoppingCart']) > 0) {
+      $email = $_SESSION['email'];
+      $sqlUser = "SELECT * FROM User WHERE email='$email'";
+      if($rowUser = dBQuery($sqlUser)->fetch_assoc()) {
         $firstName = $rowUser['firstName'];
-        $lastName = $rowUser['$lastName'];
+        $lastName = $rowUser['lastName'];
+      } else {
+          $firstName = "";
+          $lastName = "";
       }
-    }*/
 
     echo ("<div class='order-info'>
             <p>Thank you ".$firstName." ".$lastName."  for your purchase!</p>
             <p>Order info:</p>
             <div class='order-products'>");
 
-    if(isset( $_SESSION['shoppingCart'])){
-      $totalPrice = 0;
-      foreach ($_SESSION['shoppingCart'] as $key => $value) {
-        $sql = "SELECT * FROM Product WHERE artNo='$value'";
-        while ($row = dBQuery($sql)->fetch_assoc()) {
-          $totalPrice += $row['price'];
-          echo("div class='order-row'>
-                  <div class='order-name'>
-                    <p>".$row['name']."</p>
-                  </div>
-                  <div class='order-price'>
-                    <p>".$row['price']."</p>
-                  </div>
-                </div>");
-        }
-      }
-      echo("</div>
-          <div class='totalPrice'>".$totalPrice."</div>
-          </div>");
+    foreach ($_SESSION['shoppingCart'] as $key => $value) {
+      $sql = "SELECT * FROM Product WHERE artNo='$value'";
+      $row = dBQuery($sql)->fetch_assoc();
+
+      echo("<div class='order-row'>
+              <div class='order-name'>
+                <p>".$row['name']."</p>
+              </div>
+              <div class='order-price'>
+                <p>".$row['price']."</p>
+              </div>
+            </div>");
     }
+    echo ("</div>
+           <h3>total price</h3>
+           <div class='totalPrice'>".$_GET['totalPrice']."</div>
+          </div>");
+    } else {
+    echo("Something went wrong!");
   }
+}
 
 ?>
