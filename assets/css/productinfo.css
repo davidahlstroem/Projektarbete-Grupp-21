@@ -67,7 +67,7 @@ font-size: 15px;
 }
 
   #product-spec ul {
-    list-style-type: circle; 
+    list-style-type: circle;
     margin: 20px;
     padding: 4px;
     background-color: #fff;
@@ -88,4 +88,10 @@ font-size: 15px;
 
 .addToCard-form{
   align-content: left;
+}
+
+h3 {
+  text-align: left;
+  margin-top: 75px;
+  margin-left: 20px;
 }
