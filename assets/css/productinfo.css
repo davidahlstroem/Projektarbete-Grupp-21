@@ -36,7 +36,7 @@ img {
 
 .product-overview {
   margin: 100px auto;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .product-info {
   margin: 20px;
@@ -94,4 +94,8 @@ h3 {
   text-align: left;
   margin-top: 75px;
   margin-left: 20px;
+}
+
+.addToCart-prodPage {
+  width: 20%;
 }
