@@ -44,7 +44,7 @@
         echo "<form method='POST' onsubmit='return isEmpty3()' action='".setComments($conn)."' >
             <input type='hidden' name='uid' value='".$_SESSION['email']."'>
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-            <textarea autofocus id='username' name= 'message' ></textarea><br>
+            <textarea id='username' name= 'message' ></textarea><br>
             <button class ='commentBtn' type 'submit' name='commentSubmit'> Comment </button>
             </form>
             <br>
