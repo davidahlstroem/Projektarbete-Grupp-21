@@ -11,6 +11,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/productinfo.css">
+        <link rel="stylesheet" href="assets/css/index_page.css">
         <script src="assets/js/validate.js"></script>
         <title></title>
     </head>
@@ -26,9 +27,12 @@
             displayProductInfo($_SESSION['artNo']);
             displaySpecification($_SESSION['artNo']); //kolla alt styling
           ?>
-          <form class="addToCart-form" action="include/php/processCart.php?artNo=<?php echo($_SESSION['artNo']); ?>" method="post">
-            <button class="p-add" type="submit" name="addToCart">add To Cart</button>
-          </form>
+          <div class="addToCart-prodPage">
+            <form class="addToCart-form" action="include/php/processCart.php?artNo=<?php echo($_SESSION['artNo']); ?>" method="post">
+              <button class="p-add" type="submit" name="addToCart">add To Cart</button>
+            </form>
+          </div>
+
           <br>
           <br>
         </div>
